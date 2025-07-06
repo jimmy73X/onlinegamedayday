@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
      crossorigin="anonymous"></script>
@@ -13,9 +13,9 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Sprunki - the exciting online adventure game. Join thousands of players worldwide in this immersive experience.">
-    <link rel="canonical" href="https://sprunkionlinegame.it.com">
-    <title>Sprunki Online - Play the Ultimate Adventure Game</title>
+    <title>Play Online Games - OnlineGameDayDay.com</title>
+    <link rel="canonical" href="https://onlinegamedayday.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -23,10 +23,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'apple-blue': '#0071e3',
-                        'apple-light': '#f5f5f7',
-                        'apple-dark': '#1d1d1f',
-                        'apple-gray': '#86868b'
+                        appleBlue: '#0071e3',
+                        appleLightGray: '#f5f5f7',
+                        appleDarkGray: '#1d1d1f',
+                        appleMidGray: '#86868b'
                     }
                 }
             }
@@ -36,94 +36,129 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            color: #1d1d1f;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
             min-height: 100vh;
+            color: #1d1d1f;
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+            border-radius: 18px;
+            overflow: hidden;
+            background: white;
             position: relative;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .game-iframe {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            background: #000;
+            transition: height 0.3s ease;
         }
         
         .hero-section {
-            background: linear-gradient(to right, #0a84ff, #5e5ce6);
-            color: white;
+            background: linear-gradient(120deg, #0071e3 0%, #004e9e 100%);
             border-radius: 0 0 30px 30px;
-            box-shadow: 0 10px 30px rgba(0, 113, 227, 0.2);
         }
         
-        .game-frame {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border: none;
-            background: #000;
+        .logo {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
-        .feature-card {
-            transition: all 0.3s ease;
-            background: white;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        .section-divider {
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
         
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 113, 227, 0.2);
+        .feature-icon {
+            background: linear-gradient(135deg, #0071e3 0%, #00a2ff 100%);
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
         }
         
-        .footer {
-            background: linear-gradient(to right, #1d1d1f, #000);
-            color: #f5f5f7;
+        footer {
+            background: linear-gradient(120deg, #1d1d1f 0%, #000 100%);
             border-radius: 30px 30px 0 0;
         }
         
-        .btn-apple {
-            background: linear-gradient(to right, #0071e3, #0a84ff);
-            color: white;
-            border-radius: 12px;
-            padding: 12px 28px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3);
-        }
-        
-        .btn-apple:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 20px rgba(0, 113, 227, 0.4);
-        }
-        
-        .nav-link {
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        .nav-link::after {
-            content: '';
+        .fullscreen-btn {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #0071e3;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .stats-item {
-            background: rgba(255, 255, 255, 0.15);
+            top: 25px;
+            right: 25px;
+            background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 10px 15px;
+            font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s ease;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
-        .stats-item:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-5px);
+        .fullscreen-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .fullscreen-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .fullscreen-mode .game-iframe {
+            width: 95%;
+            height: 90%;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        
+        .fullscreen-header {
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            color: white;
+        }
+        
+        .exit-fullscreen {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 8px 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .exit-fullscreen:hover {
+            background: rgba(255,255,255,0.3);
         }
         
         @media (max-width: 768px) {
@@ -131,271 +166,340 @@
                 border-radius: 0 0 20px 20px;
             }
             
-            .game-frame {
-                height: 400px;
+            .game-card {
+                border-radius: 14px;
+            }
+            
+            .fullscreen-btn {
+                top: 15px;
+                right: 15px;
+                padding: 8px 12px;
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body class="antialiased">
-    <!-- Navigation -->
-    <nav class="bg-white py-4 px-6 shadow-sm sticky top-0 z-50">
+    <!-- 导航栏 -->
+    <nav class="bg-white py-4 px-6 shadow-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center">
-                <div class="bg-apple-blue w-10 h-10 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-gamepad text-white text-xl"></i>
+            <div class="flex items-center space-x-2">
+                <div class="bg-appleBlue w-10 h-10 rounded-xl flex items-center justify-center">
+                    <span class="text-white text-xl font-bold">O</span>
                 </div>
-                <span class="ml-3 text-xl font-bold text-apple-dark">Sprunki</span>
+                <span class="text-xl font-bold text-appleDarkGray">OnlineGameDayDay</span>
             </div>
             
-            <div class="hidden md:flex space-x-8">
-                <a href="#" class="nav-link font-medium text-apple-dark">Home</a>
-                <a href="#" class="nav-link font-medium text-apple-dark">Gameplay</a>
-                <a href="#" class="nav-link font-medium text-apple-dark">Features</a>
-                <a href="#" class="nav-link font-medium text-apple-dark">Community</a>
-                <a href="#" class="nav-link font-medium text-apple-dark">Support</a>
+            <div class="flex space-x-6 items-center">
+                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Home</a>
+                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Games</a>
+                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Categories</a>
+                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">About</a>
+                <button class="bg-appleBlue text-white px-4 py-2 rounded-lg font-medium hover:bg-[#0066cc] transition">Play Now</button>
             </div>
-            
-            <button class="btn-apple font-semibold">Play Now</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section py-16 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Sprunki Online</h1>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 opacity-90">
-                The ultimate adventure game where strategy meets excitement in a vibrant, ever-evolving world
+    <!-- 主标题区域 -->
+    <header class="hero-section py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 logo">Play Online Games</h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
+                Play the best online games for free! No downloads, no installations - just instant fun in your browser.
             </p>
-            
-            <div class="max-w-5xl mx-auto">
-                <div class="game-frame w-full h-[500px]">
-                    <iframe src="https://sprunkiincredibox.org/game/sprunki-original/" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Game Description -->
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">The Ultimate Online Adventure</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 text-apple-blue">Welcome to the World of Sprunki</h3>
-                    <p class="text-lg text-apple-gray mb-6 leading-relaxed">
-                        Sprunki is a massively multiplayer online adventure game set in a vibrant, ever-evolving universe. 
-                        Players from around the globe join forces to explore mystical lands, battle formidable foes, and 
-                        uncover ancient secrets.
-                    </p>
-                    <p class="text-lg text-apple-gray mb-6 leading-relaxed">
-                        With regular content updates and a thriving community, Sprunki offers an immersive experience 
-                        that keeps players engaged for hours on end. Whether you're a casual explorer or a competitive 
-                        strategist, there's a place for you in this expansive world.
-                    </p>
-                    <div class="flex items-center mt-8">
-                        <div class="flex -space-x-2">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full border-2 border-white" alt="Player">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-white" alt="Player">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full border-2 border-white" alt="Player">
-                            <img src="https://randomuser.me/api/portraits/men/54.jpg" class="w-12 h-12 rounded-full border-2 border-white" alt="Player">
-                        </div>
-                        <div class="ml-4">
-                            <p class="font-medium">Join <span class="text-apple-blue font-bold">1.2M+</span> players worldwide</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="feature-card p-6">
-                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                            <i class="fas fa-swords text-apple-blue text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Epic Battles</h3>
-                        <p class="text-apple-gray">Strategic combat with hundreds of unique skills and abilities</p>
-                    </div>
-                    <div class="feature-card p-6">
-                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                            <i class="fas fa-users text-purple-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Guild System</h3>
-                        <p class="text-apple-gray">Form alliances and conquer territories with friends</p>
-                    </div>
-                    <div class="feature-card p-6">
-                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                            <i class="fas fa-dragon text-green-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Mythical Creatures</h3>
-                        <p class="text-apple-gray">Discover and tame legendary beasts from ancient lore</p>
-                    </div>
-                    <div class="feature-card p-6">
-                        <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
-                            <i class="fas fa-gem text-yellow-600 text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Treasure Hunts</h3>
-                        <p class="text-apple-gray">Solve puzzles and find hidden riches across the realms</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-16 px-6 bg-apple-light">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">By The Numbers</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="stats-item">
-                    <div class="text-4xl font-bold text-apple-blue mb-2">1.2M+</div>
-                    <p class="text-lg">Active Players</p>
-                </div>
-                <div class="stats-item">
-                    <div class="text-4xl font-bold text-purple-600 mb-2">27</div>
-                    <p class="text-lg">Unique Realms</p>
-                </div>
-                <div class="stats-item">
-                    <div class="text-4xl font-bold text-green-600 mb-2">500+</div>
-                    <p class="text-lg">Quests Available</p>
-                </div>
-                <div class="stats-item">
-                    <div class="text-4xl font-bold text-yellow-600 mb-2">96%</div>
-                    <p class="text-lg">Positive Reviews</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How to Play -->
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Getting Started</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-24 h-24 bg-apple-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-white text-4xl font-bold">1</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Create Account</h3>
-                    <p class="text-apple-gray max-w-xs mx-auto">
-                        Sign up with email or social media in seconds. No downloads required!
-                    </p>
-                </div>
-                <div class="text-center">
-                    <div class="w-24 h-24 bg-apple-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-white text-4xl font-bold">2</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Customize Avatar</h3>
-                    <p class="text-apple-gray max-w-xs mx-auto">
-                        Choose from hundreds of customization options to create your unique hero.
-                    </p>
-                </div>
-                <div class="text-center">
-                    <div class="w-24 h-24 bg-apple-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-white text-4xl font-bold">3</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Start Adventure</h3>
-                    <p class="text-apple-gray max-w-xs mx-auto">
-                        Complete the tutorial and embark on your first quest in the world of Sprunki.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-16">
-                <button class="btn-apple px-10 py-5 text-xl">
-                    <i class="fas fa-user-plus mr-3"></i> Create Free Account
+            <div class="flex justify-center space-x-4">
+                <button class="bg-white text-appleBlue px-8 py-3 rounded-xl font-bold text-lg hover:bg-gray-100 transition">
+                    <i class="fas fa-play mr-2"></i> Start Playing
+                </button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-white/10 transition">
+                    Browse Games
                 </button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Footer -->
-    <footer class="footer py-12 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-6">
-                        <div class="bg-apple-blue w-10 h-10 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-gamepad text-white text-xl"></i>
-                        </div>
-                        <span class="ml-3 text-xl font-bold text-white">Sprunki</span>
+    <!-- 游戏展示部分 -->
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <!-- 游戏1：Sprunki -->
+        <section class="game-card mb-20" id="sprunki-card">
+            <button class="fullscreen-btn" onclick="toggleFullscreen('sprunki')">
+                <i class="fas fa-expand"></i> Full Screen
+            </button>
+            <div class="p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
+                        <i class="fas fa-music"></i>
                     </div>
-                    <p class="text-apple-gray mb-6">
-                        The ultimate online adventure game with endless possibilities and a thriving community.
+                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Sprunki</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
+                            Sprunki is an innovative music creation game where you become the composer. Drag and drop different sound icons to create your own unique mix. Each character represents a different sound element - beats, effects, melodies, and voices. Experiment with combinations to unlock special bonus tracks and create amazing musical compositions. Perfect for music lovers and creative minds!
+                        </p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Music Creation</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Rhythm Game</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Creative</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Relaxing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-iframe" id="sprunki-iframe-container">
+                        <iframe src="https://sprunkiincredibox.org/sprunki-phase-3-rm-but-all-alive.embed" width="100%" height="400" frameborder="0" allowfullscreen id="sprunki-iframe"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 游戏2：Colorblockjam -->
+        <section class="game-card mb-20" id="colorblockjam-card">
+            <button class="fullscreen-btn" onclick="toggleFullscreen('colorblockjam')">
+                <i class="fas fa-expand"></i> Full Screen
+            </button>
+            <div class="p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Colorblockjam</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="order-2 lg:order-1">
+                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
+                            Colorblockjam is a vibrant puzzle game that challenges your pattern matching skills. Swipe and match colorful blocks to clear the board and earn points. With hundreds of levels, power-ups, and special challenges, this game offers endless entertainment. Strategize your moves to create massive combos and climb the leaderboards. Easy to learn but hard to master - perfect for puzzle enthusiasts!
+                        </p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Puzzle</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Color Matching</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Strategy</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Addictive</span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-iframe order-1 lg:order-2" id="colorblockjam-iframe-container">
+                        <iframe src="https://html5.gamedistribution.com/0e678f2a73174718b682054a8b24ab4b/" width="100%" height="400" frameborder="0" allowfullscreen id="colorblockjam-iframe"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 游戏3：Climbingblock -->
+        <section class="game-card" id="climbingblock-card">
+            <button class="fullscreen-btn" onclick="toggleFullscreen('climbingblock')">
+                <i class="fas fa-expand"></i> Full Screen
+            </button>
+            <div class="p-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-gradient-to-r from-green-500 to-teal-500 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Climbingblock</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
+                            Climbingblock is an exciting physics-based climbing adventure. Control your block character as you scale increasingly challenging towers. Jump from block to block, avoid obstacles, and collect power-ups to reach new heights. With simple one-touch controls and addictive gameplay, you'll keep coming back to beat your high score. How high can you climb in this ultimate test of skill and timing?
+                        </p>
+                        <div class="flex flex-wrap gap-4 mb-6">
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Platformer</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Adventure</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Skill Game</span>
+                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Endless</span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-iframe" id="climbingblock-iframe-container">
+                        <iframe src="https://games.crazygames.com/en_US/climbing-block---let-s-up-llam/index.html?v=1.3344" width="100%" height="400" frameborder="0" allowfullscreen id="climbingblock-iframe"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 网站特点 -->
+        <section class="mt-24 text-center">
+            <h2 class="text-4xl font-bold mb-4 text-appleDarkGray">Why Play on OnlineGameDayDay?</h2>
+            <p class="text-xl text-appleMidGray max-w-3xl mx-auto mb-16">
+                We provide the best online gaming experience with no downloads or installations required.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Instant Play</h3>
+                    <p class="text-appleMidGray">No downloads or installations required. Just click and play directly in your browser.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mobile Optimized</h3>
+                    <p class="text-appleMidGray">Play on any device - desktop, tablet, or mobile. Our games work everywhere.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Full Screen Experience</h3>
+                    <p class="text-appleMidGray">Enjoy immersive gameplay with our full screen mode for each game.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 全屏模式容器 -->
+    <div id="fullscreen-container" class="fullscreen-mode hidden">
+        <div class="fullscreen-header">
+            <h2 id="fullscreen-title" class="text-2xl font-bold"></h2>
+            <button class="exit-fullscreen" onclick="exitFullscreen()">
+                <i class="fas fa-times mr-2"></i> Exit Full Screen
+            </button>
+        </div>
+        <div id="fullscreen-iframe-container" class="game-iframe w-full h-full"></div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="mt-24 py-16 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="bg-appleBlue w-10 h-10 rounded-xl flex items-center justify-center">
+                            <span class="text-white text-xl font-bold">O</span>
+                        </div>
+                        <span class="text-xl font-bold">OnlineGameDayDay</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Your ultimate destination for free online games. Play anywhere, anytime!
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                            <i class="fab fa-facebook-f text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                            <i class="fab fa-twitter text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                            <i class="fab fa-instagram text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                            <i class="fab fa-discord text-white"></i>
-                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-6">Game Links</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-apple-gray hover:text-white">Download Client</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Game Updates</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Leaderboards</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Events Calendar</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Merchandise</a></li>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">Popular Games</a></li>
+                        <li><a href="#" class="hover:text-white">New Games</a></li>
+                        <li><a href="#" class="hover:text-white">Categories</a></li>
+                        <li><a href="#" class="hover:text-white">Top Players</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-6">Support</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-apple-gray hover:text-white">Help Center</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">FAQs</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Community Forums</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Contact Us</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Server Status</a></li>
+                    <h3 class="text-lg font-bold mb-6">Categories</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Action Games</a></li>
+                        <li><a href="#" class="hover:text-white">Puzzle Games</a></li>
+                        <li><a href="#" class="hover:text-white">Adventure Games</a></li>
+                        <li><a href="#" class="hover:text-white">Sports Games</a></li>
+                        <li><a href="#" class="hover:text-white">Strategy Games</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold text-white mb-6">Legal</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-apple-gray hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Cookie Policy</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">Refund Policy</a></li>
-                        <li><a href="#" class="text-apple-gray hover:text-white">EULA</a></li>
+                    <h3 class="text-lg font-bold mb-6">Support</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Report a Problem</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-apple-gray">
-                    © 2023 Sprunki Online Game. All rights reserved. sprunkionlinegame.it.com
-                </p>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2023 OnlineGameDayDay.com. All rights reserved. Play online games for free!</p>
             </div>
         </div>
     </footer>
+    
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-appleBlue text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
-        // Simple animation for stats counter
-        document.addEventListener('DOMContentLoaded', function() {
-            const statsItems = document.querySelectorAll('.stats-item');
-            
-            statsItems.forEach(item => {
-                item.addEventListener('mouseover', function() {
-                    this.style.transform = 'translateY(-10px)';
-                });
-                
-                item.addEventListener('mouseout', function() {
-                    this.style.transform = 'translateY(0)';
-                });
+        // 返回顶部功能
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
+        });
+        
+        // 全屏功能
+        function toggleFullscreen(game) {
+            const container = document.getElementById('fullscreen-container');
+            const iframeContainer = document.getElementById('fullscreen-iframe-container');
+            const title = document.getElementById('fullscreen-title');
+            
+            // 隐藏所有游戏卡片
+            document.querySelectorAll('.game-card').forEach(card => {
+                card.classList.add('hidden');
+            });
+            
+            // 设置游戏标题
+            title.textContent = game.charAt(0).toUpperCase() + game.slice(1);
+            
+            // 获取iframe
+            const iframe = document.getElementById(`${game}-iframe`);
+            
+            // 复制iframe到全屏容器
+            iframeContainer.innerHTML = '';
+            const clonedIframe = iframe.cloneNode(true);
+            clonedIframe.style.width = '100%';
+            clonedIframe.style.height = '100%';
+            iframeContainer.appendChild(clonedIframe);
+            
+            // 显示全屏容器
+            container.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function exitFullscreen() {
+            const container = document.getElementById('fullscreen-container');
+            
+            // 隐藏全屏容器
+            container.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // 显示所有游戏卡片
+            document.querySelectorAll('.game-card').forEach(card => {
+                card.classList.remove('hidden');
+            });
+        }
+        
+        // 按ESC键退出全屏
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                exitFullscreen();
+            }
         });
     </script>
 </body>
