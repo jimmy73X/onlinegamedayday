@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9341704667724928"
      crossorigin="anonymous"></script>
      <meta name="google-adsense-account" content="ca-pub-9341704667724928">
   <!-- Google tag (gtag.js) -->
@@ -14,8 +15,9 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Online Games - OnlineGameDayDay.com</title>
-    <link rel="canonical" href="https://onlinegamedayday.com">
+    <meta name="description" content="Play free online games at OnlineGameDayDay - browser games, multiplayer games, io games, action and adventure games. No downloads required!">
+    <link rel="canonical" href="https://www.onlinegamedayday.com/">
+    <title>OnlineGameDayDay - Free Online Games to Play in Your Browser</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,361 +26,528 @@
             theme: {
                 extend: {
                     colors: {
-                        appleBlue: '#0071e3',
-                        appleLightGray: '#f5f5f7',
-                        appleDarkGray: '#1d1d1f',
-                        appleMidGray: '#86868b'
+                        'apple-blue': '#0071e3',
+                        'apple-light': '#f5f5f7',
+                        'apple-dark': '#1d1d1f',
+                        'apple-gray': '#86868b'
                     }
                 }
             }
         }
     </script>
-    <style>
+    <style type="text/css">
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f9f9fb 0%, #ffffff 100%);
             color: #1d1d1f;
+            scroll-behavior: smooth;
         }
         
         .game-card {
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             border-radius: 18px;
             overflow: hidden;
             background: white;
-            position: relative;
         }
         
         .game-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 113, 227, 0.15);
         }
         
         .game-iframe {
+            aspect-ratio: 16/9;
+            border: none;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
             background: #000;
-            transition: height 0.3s ease;
         }
         
-        .hero-section {
-            background: linear-gradient(120deg, #0071e3 0%, #004e9e 100%);
-            border-radius: 0 0 30px 30px;
+        .forum-message {
+            border-left: 3px solid #0071e3;
+            transition: all 0.2s ease;
         }
         
-        .logo {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .forum-message:hover {
+            background-color: rgba(0, 113, 227, 0.03);
         }
         
-        .section-divider {
-            border-top: 1px solid rgba(0,0,0,0.05);
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
         
-        .feature-icon {
-            background: linear-gradient(135deg, #0071e3 0%, #00a2ff 100%);
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
+        .gradient-header {
+            background: linear-gradient(120deg, #0071e3 0%, #7b68ee 50%, #3498db 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        footer {
-            background: linear-gradient(120deg, #1d1d1f 0%, #000 100%);
-            border-radius: 30px 30px 0 0;
+        .nav-link {
+            position: relative;
+            padding-bottom: 2px;
         }
         
-        .fullscreen-btn {
+        .nav-link::after {
+            content: '';
             position: absolute;
-            top: 25px;
-            right: 25px;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-            border: none;
-            border-radius: 12px;
-            color: white;
-            padding: 10px 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 20;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .fullscreen-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-        
-        .fullscreen-mode {
-            position: fixed;
-            top: 0;
+            bottom: 0;
             left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0071e3;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
             width: 100%;
-            height: 100%;
-            z-index: 100;
-            background: #000;
+        }
+        
+        .ad-container {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+            border: 1px dashed #0071e3;
+            border-radius: 12px;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .fullscreen-mode .game-iframe {
-            width: 95%;
-            height: 90%;
-            border-radius: 0;
-            box-shadow: none;
-        }
-        
-        .fullscreen-header {
-            width: 95%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            color: white;
-        }
-        
-        .exit-fullscreen {
-            background: rgba(255,255,255,0.2);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            padding: 8px 15px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .exit-fullscreen:hover {
-            background: rgba(255,255,255,0.3);
+            color: #0071e3;
+            font-weight: 500;
+            min-height: 90px;
         }
         
         @media (max-width: 768px) {
-            .hero-section {
-                border-radius: 0 0 20px 20px;
+            .game-grid {
+                grid-template-columns: 1fr;
             }
             
-            .game-card {
-                border-radius: 14px;
+            .header-content {
+                flex-direction: column;
+                text-align: center;
             }
             
-            .fullscreen-btn {
-                top: 15px;
-                right: 15px;
-                padding: 8px 12px;
-                font-size: 14px;
+            .logo-container {
+                margin-bottom: 1rem;
             }
+        }
+        
+        .expand-button {
+            transition: all 0.3s ease;
+        }
+        
+        .expand-button:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="antialiased">
-    <!-- 导航栏 -->
-    <nav class="bg-white py-4 px-6 shadow-sm">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="bg-appleBlue w-10 h-10 rounded-xl flex items-center justify-center">
-                    <span class="text-white text-xl font-bold">O</span>
+<body class="min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="logo-container bg-gradient-to-br from-blue-500 to-indigo-600 w-12 h-12 rounded-xl flex items-center justify-center shadow-md">
+                    <span class="text-white text-2xl font-bold">OGD</span>
                 </div>
-                <span class="text-xl font-bold text-appleDarkGray">OnlineGameDayDay</span>
+                <h1 class="text-2xl font-bold text-gray-900">OnlineGame<span class="text-blue-600">Day</span>Day</h1>
             </div>
             
-            <div class="flex space-x-6 items-center">
-                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Home</a>
-                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Games</a>
-                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">Categories</a>
-                <a href="#" class="text-appleDarkGray hover:text-appleBlue font-medium">About</a>
-                <button class="bg-appleBlue text-white px-4 py-2 rounded-lg font-medium hover:bg-[#0066cc] transition">Play Now</button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- 主标题区域 -->
-    <header class="hero-section py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 logo">Play Online Games</h1>
-            <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
-                Play the best online games for free! No downloads, no installations - just instant fun in your browser.
-            </p>
-            <div class="flex justify-center space-x-4">
-                <button class="bg-white text-appleBlue px-8 py-3 rounded-xl font-bold text-lg hover:bg-gray-100 transition">
-                    <i class="fas fa-play mr-2"></i> Start Playing
-                </button>
-                <button class="border-2 border-white text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-white/10 transition">
-                    Browse Games
-                </button>
-            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#sprunki" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Sprunki</a>
+                <a href="#colorblockjam" class="nav-link text-gray-700 hover:text-blue-600 font-medium">ColorBlockJam</a>
+                <a href="#climbingblock" class="nav-link text-gray-700 hover:text-blue-600 font-medium">ClimbingBlock</a>
+                <a href="#forum" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Forum</a>
+            </nav>
+            
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
         </div>
     </header>
 
-    <!-- 游戏展示部分 -->
-    <main class="max-w-7xl mx-auto px-6 py-16">
-        <!-- 游戏1：Sprunki -->
-        <section class="game-card mb-20" id="sprunki-card">
-            <button class="fullscreen-btn" onclick="toggleFullscreen('sprunki')">
-                <i class="fas fa-expand"></i> Full Screen
-            </button>
-            <div class="p-8">
-                <div class="flex items-center mb-6">
-                    <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Sprunki</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
-                            Sprunki is an innovative music creation game where you become the composer. Drag and drop different sound icons to create your own unique mix. Each character represents a different sound element - beats, effects, melodies, and voices. Experiment with combinations to unlock special bonus tracks and create amazing musical compositions. Perfect for music lovers and creative minds!
-                        </p>
-                        <div class="flex flex-wrap gap-4 mb-6">
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Music Creation</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Rhythm Game</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Creative</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Relaxing</span>
-                        </div>
-                    </div>
-                    
-                    <div class="game-iframe" id="sprunki-iframe-container">
-                        <iframe src="https://sprunkiincredibox.org/sprunki-phase-3-rm-but-all-alive.embed" width="100%" height="400" frameborder="0" allowfullscreen id="sprunki-iframe"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 游戏2：Colorblockjam -->
-        <section class="game-card mb-20" id="colorblockjam-card">
-            <button class="fullscreen-btn" onclick="toggleFullscreen('colorblockjam')">
-                <i class="fas fa-expand"></i> Full Screen
-            </button>
-            <div class="p-8">
-                <div class="flex items-center mb-6">
-                    <div class="bg-gradient-to-r from-red-500 to-orange-500 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Colorblockjam</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="order-2 lg:order-1">
-                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
-                            Colorblockjam is a vibrant puzzle game that challenges your pattern matching skills. Swipe and match colorful blocks to clear the board and earn points. With hundreds of levels, power-ups, and special challenges, this game offers endless entertainment. Strategize your moves to create massive combos and climb the leaderboards. Easy to learn but hard to master - perfect for puzzle enthusiasts!
-                        </p>
-                        <div class="flex flex-wrap gap-4 mb-6">
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Puzzle</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Color Matching</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Strategy</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Addictive</span>
-                        </div>
-                    </div>
-                    
-                    <div class="game-iframe order-1 lg:order-2" id="colorblockjam-iframe-container">
-                        <iframe src="https://html5.gamedistribution.com/0e678f2a73174718b682054a8b24ab4b/" width="100%" height="400" frameborder="0" allowfullscreen id="colorblockjam-iframe"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 游戏3：Climbingblock -->
-        <section class="game-card" id="climbingblock-card">
-            <button class="fullscreen-btn" onclick="toggleFullscreen('climbingblock')">
-                <i class="fas fa-expand"></i> Full Screen
-            </button>
-            <div class="p-8">
-                <div class="flex items-center mb-6">
-                    <div class="bg-gradient-to-r from-green-500 to-teal-500 text-white w-14 h-14 rounded-xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-mountain"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold ml-4 text-appleDarkGray">Climbingblock</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                        <p class="text-lg text-appleMidGray mb-6 leading-relaxed">
-                            Climbingblock is an exciting physics-based climbing adventure. Control your block character as you scale increasingly challenging towers. Jump from block to block, avoid obstacles, and collect power-ups to reach new heights. With simple one-touch controls and addictive gameplay, you'll keep coming back to beat your high score. How high can you climb in this ultimate test of skill and timing?
-                        </p>
-                        <div class="flex flex-wrap gap-4 mb-6">
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Platformer</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Adventure</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Skill Game</span>
-                            <span class="bg-appleLightGray px-4 py-2 rounded-full text-sm font-medium">Endless</span>
-                        </div>
-                    </div>
-                    
-                    <div class="game-iframe" id="climbingblock-iframe-container">
-                        <iframe src="https://games.crazygames.com/en_US/climbing-block---let-s-up-llam/index.html?v=1.3344" width="100%" height="400" frameborder="0" allowfullscreen id="climbingblock-iframe"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 网站特点 -->
-        <section class="mt-24 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-appleDarkGray">Why Play on OnlineGameDayDay?</h2>
-            <p class="text-xl text-appleMidGray max-w-3xl mx-auto mb-16">
-                We provide the best online gaming experience with no downloads or installations required.
+    <!-- Hero Section -->
+    <section class="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-header">
+                Play Free Online Games
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+                Discover the best browser games - no downloads required! Play action, adventure, multiplayer and io games directly in your browser.
             </p>
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <span class="badge bg-blue-100 text-blue-800">Online Games</span>
+                <span class="badge bg-purple-100 text-purple-800">Free Games</span>
+                <span class="badge bg-green-100 text-green-800">Browser Games</span>
+                <span class="badge bg-yellow-100 text-yellow-800">Multiplayer</span>
+                <span class="badge bg-red-100 text-red-800">Action Games</span>
+                <span class="badge bg-indigo-100 text-indigo-800">Adventure Games</span>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bolt text-white text-2xl"></i>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-gamepad text-blue-600 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Instant Play</h3>
-                    <p class="text-appleMidGray">No downloads or installations required. Just click and play directly in your browser.</p>
+                    <h3 class="font-bold text-gray-800">10,000+ Games</h3>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-plug text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">No Installation</h3>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-users text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Multiplayer</h3>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-mobile-alt text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800">Mobile Friendly</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Games Section -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Sprunki Game -->
+        <section id="sprunki" class="game-card p-6 mb-16">
+            <div class="flex flex-wrap items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-900 mr-4">Sprunki</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge bg-blue-100 text-blue-800">Music</span>
+                    <span class="badge bg-purple-100 text-purple-800">Rhythm</span>
+                    <span class="badge bg-green-100 text-green-800">Creative</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 mb-4 text-lg leading-relaxed">
+                        Sprunki is an innovative music game where you create your own beats by combining different sound characters. 
+                        Each character represents a unique sound loop - drag and drop them to create your musical masterpiece!
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        With multiple phases and characters to unlock, Sprunki offers endless creative possibilities. 
+                        Create funky rhythms, ambient soundscapes, or energetic dance tracks - the choice is yours!
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Players</p>
+                            <p class="font-bold">1+ Million</p>
+                        </div>
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Rating</p>
+                            <p class="font-bold">4.8/5 <i class="fas fa-star text-yellow-400"></i></p>
+                        </div>
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Category</p>
+                            <p class="font-bold">Music & Creativity</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                <div class="relative">
+                    <div class="relative rounded-xl overflow-hidden">
+                        <iframe 
+                            src="https://sprunkiincredibox.org/sprunki-phase-3-rm-but-all-alive.embed" 
+                            class="game-iframe w-full"
+                            allow="autoplay; fullscreen"
+                            allowfullscreen>
+                        </iframe>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
+                            <button class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold flex items-center expand-button">
+                                <i class="fas fa-expand mr-2"></i> Play Fullscreen
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Mobile Optimized</h3>
-                    <p class="text-appleMidGray">Play on any device - desktop, tablet, or mobile. Our games work everywhere.</p>
+                    <div class="mt-4 flex justify-between text-gray-600">
+                        <div>
+                            <i class="fas fa-desktop mr-2"></i> Desktop & Mobile
+                        </div>
+                        <div>
+                            <i class="fas fa-keyboard mr-2"></i> Mouse/Touch Controls
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        
+        <!-- ColorBlockJam Game -->
+        <section id="colorblockjam" class="game-card p-6 mb-16">
+            <div class="flex flex-wrap items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-900 mr-4">ColorBlockJam</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge bg-red-100 text-red-800">Puzzle</span>
+                    <span class="badge bg-yellow-100 text-yellow-800">Strategy</span>
+                    <span class="badge bg-indigo-100 text-indigo-800">Color Matching</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="order-2 lg:order-1">
+                    <div class="relative rounded-xl overflow-hidden">
+                        <iframe 
+                            src="https://html5.gamedistribution.com/0e678f2a73174718b682054a8b24ab4b/" 
+                            class="game-iframe w-full"
+                            allow="autoplay; fullscreen"
+                            allowfullscreen>
+                        </iframe>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
+                            <button class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold flex items-center expand-button">
+                                <i class="fas fa-expand mr-2"></i> Play Fullscreen
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between text-gray-600">
+                        <div>
+                            <i class="fas fa-desktop mr-2"></i> Desktop & Mobile
+                        </div>
+                        <div>
+                            <i class="fas fa-keyboard mr-2"></i> Mouse/Touch Controls
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg">
-                    <div class="feature-icon flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-expand text-white text-2xl"></i>
+                <div class="order-1 lg:order-2">
+                    <p class="text-gray-700 mb-4 text-lg leading-relaxed">
+                        ColorBlockJam is an addictive puzzle game where you match colorful blocks to clear the board. 
+                        Strategically place blocks to create large matching groups and earn massive points!
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        With hundreds of levels and special power-ups, ColorBlockJam offers endless fun. 
+                        Challenge your friends and climb the global leaderboards with your high scores!
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Players</p>
+                            <p class="font-bold">850,000+</p>
+                        </div>
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Rating</p>
+                            <p class="font-bold">4.6/5 <i class="fas fa-star text-yellow-400"></i></p>
+                        </div>
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Category</p>
+                            <p class="font-bold">Puzzle & Strategy</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Full Screen Experience</h3>
-                    <p class="text-appleMidGray">Enjoy immersive gameplay with our full screen mode for each game.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ClimbingBlock Game -->
+        <section id="climbingblock" class="game-card p-6 mb-16">
+            <div class="flex flex-wrap items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-900 mr-4">ClimbingBlock</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge bg-orange-100 text-orange-800">Action</span>
+                    <span class="badge bg-blue-100 text-blue-800">Skill</span>
+                    <span class="badge bg-pink-100 text-pink-800">Multiplayer</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 mb-4 text-lg leading-relaxed">
+                        ClimbingBlock is an exciting physics-based climbing game where you control a block trying to reach the top. 
+                        Navigate challenging obstacles, avoid falling blocks, and compete against players worldwide!
+                    </p>
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                        With simple one-touch controls and randomly generated levels, every climb is a unique challenge. 
+                        Unlock special characters and power-ups to enhance your climbing abilities!
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Players</p>
+                            <p class="font-bold">2.3 Million</p>
+                        </div>
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Rating</p>
+                            <p class="font-bold">4.9/5 <i class="fas fa-star text-yellow-400"></i></p>
+                        </div>
+                        <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                            <p class="text-sm text-gray-600">Category</p>
+                            <p class="font-bold">Action & Skill</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="relative rounded-xl overflow-hidden">
+                        <iframe 
+                            src="https://games.crazygames.com/en_US/climbing-block---let-s-up-llam/index.html?v=1.3344" 
+                            class="game-iframe w-full"
+                            allow="autoplay; fullscreen"
+                            allowfullscreen>
+                        </iframe>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 opacity-0 hover:opacity-100 transition-opacity">
+                            <button class="bg-blue-600 text-white px-6 py-3 rounded-full font-bold flex items-center expand-button">
+                                <i class="fas fa-expand mr-2"></i> Play Fullscreen
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between text-gray-600">
+                        <div>
+                            <i class="fas fa-desktop mr-2"></i> Desktop & Mobile
+                        </div>
+                        <div>
+                            <i class="fas fa-keyboard mr-2"></i> Mouse/Touch Controls
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Forum Section -->
+        <section id="forum" class="game-card p-6 mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Community Forum</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Forum Form -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-bold mb-4">Post a Message</h3>
+                        <p class="text-gray-600 mb-6">Share your thoughts, ask questions, or discuss strategies (no registration required)</p>
+                        
+                        <form id="forumForm">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your name (optional)">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                                Post Message
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 text-sm text-gray-500">
+                            <p><i class="fas fa-info-circle mr-2"></i> All messages are moderated</p>
+                            <p><i class="fas fa-shield-alt mr-2"></i> Offensive content will be filtered</p>
+                            <p><i class="fas fa-comment-slash mr-2"></i> Only the latest 50 messages are shown</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Forum Messages -->
+                <div class="lg:col-span-2">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-bold">Recent Discussions</h3>
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">48 Messages</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Message 1 -->
+                        <div class="forum-message bg-white p-5 rounded-xl shadow-sm">
+                            <div class="flex items-start mb-3">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                <div class="ml-4">
+                                    <h4 class="font-bold">GameLover42</h4>
+                                    <p class="text-gray-500 text-sm">2 hours ago</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                Just reached level 50 in ClimbingBlock! The new obstacles are challenging but so satisfying to overcome. Anyone have tips for the spinning hammers section?
+                            </p>
+                            <div class="flex space-x-4">
+                                <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-reply mr-1"></i> Reply</button>
+                                <button class="text-gray-600 hover:text-gray-800"><i class="fas fa-thumbs-up mr-1"></i> Like (15)</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Message 2 -->
+                        <div class="forum-message bg-white p-5 rounded-xl shadow-sm ml-8">
+                            <div class="flex items-start mb-3">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-12 h-12" />
+                                <div class="ml-4">
+                                    <h4 class="font-bold">ProGamer99</h4>
+                                    <p class="text-gray-500 text-sm">1 hour ago</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                @GameLover42 For the spinning hammers, time your jumps to land when the hammer is moving away. Also try to stay in the middle as much as possible!
+                            </p>
+                            <div class="flex space-x-4">
+                                <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-reply mr-1"></i> Reply</button>
+                                <button class="text-gray-600 hover:text-gray-800"><i class="fas fa-thumbs-up mr-1"></i> Like (8)</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Message 3 -->
+                        <div class="forum-message bg-white p-5 rounded-xl shadow-sm">
+                            <div class="flex items-start mb-3">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                <div class="ml-4">
+                                    <h4 class="font-bold">MusicCreator</h4>
+                                    <p class="text-gray-500 text-sm">5 hours ago</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                Created my best mix yet in Sprunki! Check it out: https://sprunkiincredibox.org/share/ABC123. Would love feedback from other Sprunki fans!
+                            </p>
+                            <div class="flex space-x-4">
+                                <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-reply mr-1"></i> Reply</button>
+                                <button class="text-gray-600 hover:text-gray-800"><i class="fas fa-thumbs-up mr-1"></i> Like (22)</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Message 4 -->
+                        <div class="forum-message bg-white p-5 rounded-xl shadow-sm">
+                            <div class="flex items-start mb-3">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                <div class="ml-4">
+                                    <h4 class="font-bold">PuzzleMaster</h4>
+                                    <p class="text-gray-500 text-sm">Yesterday</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                Just discovered the hidden bonus levels in ColorBlockJam! They're challenging but the rewards are worth it. Anyone else found them?
+                            </p>
+                            <div class="flex space-x-4">
+                                <button class="text-blue-600 hover:text-blue-800"><i class="fas fa-reply mr-1"></i> Reply</button>
+                                <button class="text-gray-600 hover:text-gray-800"><i class="fas fa-thumbs-up mr-1"></i> Like (30)</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <button class="bg-gray-100 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+                            <i class="fas fa-history mr-2"></i> Load Older Messages
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    
-    <!-- 全屏模式容器 -->
-    <div id="fullscreen-container" class="fullscreen-mode hidden">
-        <div class="fullscreen-header">
-            <h2 id="fullscreen-title" class="text-2xl font-bold"></h2>
-            <button class="exit-fullscreen" onclick="exitFullscreen()">
-                <i class="fas fa-times mr-2"></i> Exit Full Screen
-            </button>
-        </div>
-        <div id="fullscreen-iframe-container" class="game-iframe w-full h-full"></div>
-    </div>
-    
-    <!-- 页脚 -->
-    <footer class="mt-24 py-16 text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <div class="flex items-center space-x-2 mb-6">
-                        <div class="bg-appleBlue w-10 h-10 rounded-xl flex items-center justify-center">
-                            <span class="text-white text-xl font-bold">O</span>
-                        </div>
-                        <span class="text-xl font-bold">OnlineGameDayDay</span>
-                    </div>
-                    <p class="text-gray-400 mb-6">
-                        Your ultimate destination for free online games. Play anywhere, anytime!
+                    <h3 class="text-xl font-bold mb-4">OnlineGameDayDay</h3>
+                    <p class="text-gray-400 mb-4">
+                        Your premier destination for free online browser games. Play anytime, anywhere!
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
@@ -389,118 +558,81 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Home</a></li>
-                        <li><a href="#" class="hover:text-white">Popular Games</a></li>
-                        <li><a href="#" class="hover:text-white">New Games</a></li>
-                        <li><a href="#" class="hover:text-white">Categories</a></li>
-                        <li><a href="#" class="hover:text-white">Top Players</a></li>
+                    <h4 class="text-lg font-semibold mb-4">Game Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Action Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Adventure Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Puzzle Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Multiplayer Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">IO Games</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Categories</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Action Games</a></li>
-                        <li><a href="#" class="hover:text-white">Puzzle Games</a></li>
-                        <li><a href="#" class="hover:text-white">Adventure Games</a></li>
-                        <li><a href="#" class="hover:text-white">Sports Games</a></li>
-                        <li><a href="#" class="hover:text-white">Strategy Games</a></li>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">New Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Popular Games</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Forum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Support</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-white">FAQ</a></li>
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-white">Report a Problem</a></li>
-                    </ul>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on new games and features</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none">
+                        <button class="bg-blue-600 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
-                <p>© 2023 OnlineGameDayDay.com. All rights reserved. Play online games for free!</p>
+                <p>&copy; 2023 OnlineGameDayDay.com. All rights reserved.</p>
+                <div class="mt-2 flex justify-center space-x-6">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                    <a href="#" class="hover:text-gray-300">Cookie Policy</a>
+                    <a href="#" class="hover:text-gray-300">Ad Choices</a>
+                </div>
             </div>
         </div>
     </footer>
-    
-    <!-- 返回顶部按钮 -->
-    <button id="backToTop" class="fixed bottom-6 right-6 bg-appleBlue text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script>
-        // 返回顶部功能
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0');
-                backToTopButton.classList.add('opacity-100');
-            } else {
-                backToTopButton.classList.remove('opacity-100');
-                backToTopButton.classList.add('opacity-0');
-            }
+        // Simple forum functionality
+        document.getElementById('forumForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! It will appear after moderation.');
+            this.reset();
         });
         
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Fullscreen button functionality
+        document.querySelectorAll('.expand-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const iframe = this.closest('.relative').querySelector('iframe');
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.webkitRequestFullscreen) {
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) {
+                    iframe.msRequestFullscreen();
+                }
             });
         });
         
-        // 全屏功能
-        function toggleFullscreen(game) {
-            const container = document.getElementById('fullscreen-container');
-            const iframeContainer = document.getElementById('fullscreen-iframe-container');
-            const title = document.getElementById('fullscreen-title');
-            
-            // 隐藏所有游戏卡片
-            document.querySelectorAll('.game-card').forEach(card => {
-                card.classList.add('hidden');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-            
-            // 设置游戏标题
-            title.textContent = game.charAt(0).toUpperCase() + game.slice(1);
-            
-            // 获取iframe
-            const iframe = document.getElementById(`${game}-iframe`);
-            
-            // 复制iframe到全屏容器
-            iframeContainer.innerHTML = '';
-            const clonedIframe = iframe.cloneNode(true);
-            clonedIframe.style.width = '100%';
-            clonedIframe.style.height = '100%';
-            iframeContainer.appendChild(clonedIframe);
-            
-            // 显示全屏容器
-            container.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function exitFullscreen() {
-            const container = document.getElementById('fullscreen-container');
-            
-            // 隐藏全屏容器
-            container.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-            
-            // 显示所有游戏卡片
-            document.querySelectorAll('.game-card').forEach(card => {
-                card.classList.remove('hidden');
-            });
-        }
-        
-        // 按ESC键退出全屏
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                exitFullscreen();
-            }
         });
     </script>
 </body>
